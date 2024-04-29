@@ -1,6 +1,6 @@
 import unittest
 
-from avl_tree_priority_queue import AVLPriorityQueue
+from src.avl_tree_priority_queue import AVLPriorityQueue
 
 class TestAVLPriorityQueue(unittest.TestCase):
     def setUp(self):
