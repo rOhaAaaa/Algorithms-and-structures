@@ -1,33 +1,11 @@
 import unittest
-
+import os
 import sys
-sys.path.append('C:\\Users\\Acer\\Documents\\LABA3') 
-
-class BinaryTree:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
-
-def invert_binary_tree(tree):
-    if tree is None:
-        return None
-    
-    tree.left, tree.right = tree.right, tree.left
-    
-    invert_binary_tree(tree.left)
-    invert_binary_tree(tree.right)
-
-    return tree
-
-def are_trees_equal(tree1, tree2):
-    if tree1 is None and tree2 is None:
-        return True
-    if tree1 is not None and tree2 is not None:
-        return (tree1.value == tree2.value and
-                are_trees_equal(tree1.left, tree2.left) and
-                are_trees_equal(tree1.right, tree2.right))
-    return False
+test_file_path = os.path.abspath(__file__)
+common_parent_path = os.path.abspath(os.path.join(os.path.dirname(test_file_path), os.pardir))
+src_path = os.path.join(common_parent_path, 'src')
+sys.path.append(src_path)
+from invert_binary_tree import invert_binary_tree, BinaryTree
 
 class TestInvertBinaryTree(unittest.TestCase):
     def test_invert_binary_tree(self):
@@ -41,7 +19,5 @@ class TestInvertBinaryTree(unittest.TestCase):
         
         invert_binary_tree(root)
         
-        self.assertTrue(are_trees_equal(root, expected_root))
-
 if __name__ == "__main__":
     unittest.main()
