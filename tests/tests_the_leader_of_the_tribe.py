@@ -2,7 +2,12 @@ import unittest
 from unittest.mock import mock_open, patch
 import sys
 from io import StringIO
-from LABA6 import solve  
+import os
+test_file_path = os.path.abspath(__file__)
+common_parent_path = os.path.abspath(os.path.join(os.path.dirname(test_file_path), os.pardir))
+src_path = os.path.join(common_parent_path, 'src')
+sys.path.append(src_path)
+from the_leader_of_the_tribe import solve  
 class TestMarriageSolver(unittest.TestCase):
     @patch('builtins.open', new_callable=mock_open, read_data="3\n1 2\n2 4\n3 5\n")
     def test_basic_input(self, mock_file):
