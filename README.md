@@ -1,4 +1,3 @@
-# Algorithms-and-structures
 
 ## Рівень 2 
 ## Варіант 3
