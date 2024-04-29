@@ -1,7 +1,11 @@
 import unittest
-
-from laba5 import bfs, find_root_vertex, read_adj_list_from_file, write_root_vertex_to_file
-
+import os
+import sys
+test_file_path = os.path.abspath(__file__)
+common_parent_path = os.path.abspath(os.path.join(os.path.dirname(test_file_path), os.pardir))
+src_path = os.path.join(common_parent_path, 'src')
+sys.path.append(src_path)
+from find_the_root_vertex_of_the_graph import bfs,find_root_vertex,read_adj_list_from_file,write_root_vertex_to_file
 from unittest.mock import patch, mock_open
 
 class TestGraphFunctions(unittest.TestCase):
