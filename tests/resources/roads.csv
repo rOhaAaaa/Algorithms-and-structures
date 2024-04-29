@@ -1,0 +1,12 @@
+Start,End,Capacity
+F1,X1,10
+X1,X2,20
+X1,X3,10
+X1,S5,5
+X2,S1,5
+X2,S2,15
+X2,S5,5
+X3,S3,15
+F2,X2,5
+F3,X3,8
+X3,S4,7
