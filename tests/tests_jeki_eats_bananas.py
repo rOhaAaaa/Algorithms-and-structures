@@ -1,5 +1,7 @@
 import unittest
 
+from jeki_eats_bananas import min_eating_speed
+
 class TestBananaEatingSpeed(unittest.TestCase):
 
     def test_min_eating_speed(self):
