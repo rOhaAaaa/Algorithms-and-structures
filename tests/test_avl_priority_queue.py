@@ -6,7 +6,7 @@ common_parent_path = os.path.abspath(os.path.join(os.path.dirname(test_file_path
 src_path = os.path.join(common_parent_path, 'src')
 sys.path.append(src_path)
 
-from src.avl_tree_priority_queue import AVLPriorityQueue
+from avl_tree_priority_queue import AVLPriorityQueue
 
 class TestAVLPriorityQueue(unittest.TestCase):
     def setUp(self):
