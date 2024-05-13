@@ -30,7 +30,7 @@ def solve(file_path, output_file_path):
     with open(output_file_path, 'w') as file:
         file.write(str(result))
 
-file_path = r'C:\Users\Acer\Documents\ПРОГРАМУВАННЯ 1 курс 2 семестр\LABA9\wchain.in.txt'
-output_file_path = r'C:\Users\Acer\Documents\ПРОГРАМУВАННЯ 1 курс 2 семестр\LABA9\wchain.out.txt'
+file_path = r'tests\resources\wchain.in.txt'
+output_file_path = r'tests\resources\wchain.out.txt'
 
 solve(file_path, output_file_path)
