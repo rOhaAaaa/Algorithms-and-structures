@@ -1,6 +1,8 @@
+import csv
 from collections import defaultdict, deque
 import pandas as pd
 from typing import Dict, Set, Deque, List, Tuple
+
 
 class Graph:
     def __init__(self) -> None:
@@ -98,14 +100,14 @@ def read_graph_and_nodes_from_csv(file_path: str) -> Tuple[Graph, List[str], Lis
         farms = f.readline().strip().split(',')
         stores = f.readline().strip().split(',')
 
-    data = pd.read_csv(file_path, skiprows=[0, 1])
+    edge = pd.read_csv(file_path, skiprows=[0, 1])
 
-    g = Graph()
+    graph = Graph()
 
-    for start_node, end_node, weight in data.itertuples(index=False):
-        g.add_edge(start_node, end_node, weight)
+    for start_node, end_node, weight in edge.itertuples(index=False):
+        graph.add_edge(start_node, end_node, weight)
 
-    return g, farms, stores
+    return graph, farms, stores
 
 
 def find_max_flow(file_path: str) -> int:
@@ -118,21 +120,20 @@ def find_max_flow(file_path: str) -> int:
     Returns:
     int: The maximum number of cars that can travel from the farms to the stores in one day.
     """
-    g, farms, stores = read_graph_and_nodes_from_csv(file_path)
+    graph, farms, stores = read_graph_and_nodes_from_csv(file_path)
 
     super_source = 'SuperSource'
     super_sink = 'SuperSink'
 
     for farm in farms:
-        g.add_edge(super_source, farm, float('Inf'))
+        graph.add_edge(super_source, farm, float('Inf'))
 
     for store in stores:
-        g.add_edge(store, super_sink, float('Inf'))
+        graph.add_edge(store, super_sink, float('Inf'))
 
-    return g.ford_fulkerson(super_source, super_sink)
-
+    return graph.ford_fulkerson(super_source, super_sink)
 
 if __name__ == '__main__':
-    file_path = r'C:\Users\Acer\Documents\ПРОГРАМУВАННЯ 1 курс 2 семестр\LABA8\roads.csv'
+    file_path = r'tests\resources\roads.csv'
     max_flow = find_max_flow(file_path)
     print(f"Максимальна кількість автомобілів, які зможуть проїхати протягом дня з квіткових ферм до квіткових магазинів: {max_flow}")
