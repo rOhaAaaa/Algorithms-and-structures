@@ -50,7 +50,7 @@ def solve(file_path):
     print(total_pairs)
 
 if __name__ == "__main__":
-    file_path = r'C:\Users\Acer\Documents\ПРОГРАМУВАННЯ 1 курс 2 семестр\LABA6\input.txt'
+    file_path = r'tests\resources\input1.txt'
     if len(sys.argv) > 1:
         file_path = sys.argv[1]
     solve(file_path)
