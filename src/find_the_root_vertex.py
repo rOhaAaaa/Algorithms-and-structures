@@ -38,7 +38,7 @@ def write_root_vertex_to_file(file_path, root_vertex):
     with open(file_path, 'w') as f:
         f.write(str(root_vertex))
 
-file_path = r'C:\Users\Acer\Documents\ПРОГРАМУВАННЯ 1 курс 2 семестр\LABA5\input.txt'        
+file_path = r'tests\resources\input.txt'     
 adj_list = read_adj_list_from_file(file_path)
 root_vertex = find_root_vertex(adj_list)
 output_file_path = 'output.txt'
