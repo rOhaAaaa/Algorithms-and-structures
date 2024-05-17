@@ -1,13 +1,11 @@
 import unittest
 import os
 import sys
-test_file_path = os.path.abspath(__file__)
-common_parent_path = os.path.abspath(os.path.join(os.path.dirname(test_file_path), os.pardir))
-src_path = os.path.join(common_parent_path, 'src')
-sys.path.append(src_path)
-from jeki_eats_bananas import min_eating_speed
 
-from jeki_eats_bananas import min_eating_speed
+script_dir = os.path.dirname(os.path.relpath(__file__))
+sys.path.append(os.path.dirname(script_dir))
+sys.path.append(src_path)
+from src.jeki_eats_bananas import min_eating_speed
 
 class TestBananaEatingSpeed(unittest.TestCase):
 
