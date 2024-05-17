@@ -1,0 +1,10 @@
+F1,F2,F3
+S1,S2,S3
+Start,End,Capacity
+F1,X1,10
+X1,X2,15
+X2,S1,10
+S1,X3,5
+X3,F2,10
+F2,S2,15
+F3,S3,10
