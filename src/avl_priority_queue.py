@@ -96,5 +96,20 @@ class AVLPriorityQueue:
             result.extend(self.traverse(node.right))
 
         return result
-    
 
+queue = AVLPriorityQueue()
+queue.insert(5, 1)
+queue.insert(9, 2)
+queue.insert(3, 0)
+queue.insert(7, 1)
+
+print("Черга після вставки елементів:")
+print(queue.traverse())
+
+print("Елемент з найвищим пріоритетом:", queue.peek())
+
+removed_element = queue.remove()
+print("Видалений елемент з найвищим пріоритетом:", removed_element)
+
+print("Черга після видалення елемента:")
+print(queue.traverse())
